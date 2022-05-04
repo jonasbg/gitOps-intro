@@ -8,7 +8,7 @@ spec:
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: applications/
+    path: projects/
     repoURL: 'https://github.com/jonasbg/gitOps-nnug-demo.git'
     targetRevision: drone
     directory:
