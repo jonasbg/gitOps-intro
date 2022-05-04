@@ -18,6 +18,8 @@ spec:
           config:
             database:
               DB_TYPE: sqlite3
+          admin:
+            password: "r8sA8CPHD9!bt6d"
         memcached:
           enabled: false
         postgresql:
