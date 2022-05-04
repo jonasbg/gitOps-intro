@@ -10,8 +10,8 @@ steps:
 - name: test
   image: golang:1.18
   commands:
-  - go get
-  - go test
+  - go test -v src/intutils_test.go
+  - go test -bench=. src/intutils_test.go
 
 ---
 kind: pipeline
@@ -25,8 +25,8 @@ steps:
 - name: test
   image: golang:1.17
   commands:
-  - go get
-  - go test
+  - go test -v src/intutils_test.go
+  - go test -bench=. src/intutils_test.go
 ---
 kind: pipeline
 type: kubernetes
@@ -39,5 +39,5 @@ steps:
 - name: test
   image: golang:1.16
   commands:
-  - go get
-  - go test
+  - go test -v src/intutils_test.go
+  - go test -bench=. src/intutils_test.go
