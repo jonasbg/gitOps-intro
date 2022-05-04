@@ -1,0 +1,43 @@
+---
+kind: pipeline
+type: kubernetes
+name: go-1-18
+
+clone:
+  skip_verify: true
+
+steps:
+- name: test
+  image: golang:1.18
+  commands:
+  - go get
+  - go test
+
+---
+kind: pipeline
+type: kubernetes
+name: go-1-17
+
+clone:
+  skip_verify: true
+
+steps:
+- name: test
+  image: golang:1.17
+  commands:
+  - go get
+  - go test
+---
+kind: pipeline
+type: kubernetes
+name: go-1-16
+
+clone:
+  skip_verify: true
+
+steps:
+- name: test
+  image: golang:1.16
+  commands:
+  - go get
+  - go test
