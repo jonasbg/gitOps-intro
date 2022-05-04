@@ -1,0 +1,12 @@
+kind: pipeline
+name: demo-pipeline
+type: kubernetes
+
+clone:
+  skip_verify: true
+
+steps:
+- name: demo
+  image: alpine
+  commands:
+  - echo "Hello world from pipeline"
