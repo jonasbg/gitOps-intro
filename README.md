@@ -58,6 +58,20 @@ kubectl port-forward svc/gitea-http -n gitea 3000 --address 0.0.0.0
 
 > 👉 *Viktig*: La denne `port-forwarding` kjøre i bakgrunnen mens du fortsetter.
 
+### Lag OAuth2 applikasjon i Gitea
+Gå til gitea sin url og logg inn med
+
+```bash
+brukernavn: gitea_admin
+passord: r8sA8CPHD9!bt6d
+```
+Lag en OAuth2 applikasjon med følgende innstillinger:
+```bash
+Application Name: DroneCI
+Callback URI: http://192.168.64.5:8000/login
+```
+
+Kopier `Client ID` og `Client Secret` og bruk de som override i ArgoCD for DroneCI etter installasjon i steget under.
 # DroneCI
 For å installere DroneCI må vi fortelle ArgoCD hvor manifestet befinner seg. Manifestet befinner seg på en egen branch som heter `drone`, så dette kan endres fra ArgoCD UI eller ved å patche `app-of-apps` manifestet.
 ```bash
@@ -72,6 +86,8 @@ kubectl port-forward svc/drone -n drone 8000:80 --address 0.0.0.0
 
 > 👉 *Viktig*: La denne `port-forwarding` kjøre i bakgrunnen mens du fortsetter.
 
+## Koble til repoet
+Nå kan vi koble DroneCI til repoet vårt. Gå til [http://192.168.64.5:8000](http://192.168.64.5:8000)
 
 # Port-forwarding
 Dette eksemplet krever en ip og port-forwarding som er gitt, hvis ikke vil ikke tjenestene fungere. Vi kan forenkle dette med å lage en tmux sesjon som håndterer alt dette for oss.
