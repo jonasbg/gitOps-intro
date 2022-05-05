@@ -10,7 +10,7 @@ spec:
   source:
     path: projects/
     repoURL: 'https://github.com/jonasbg/gitOps-nnug-demo.git'
-    targetRevision: drone
+    targetRevision: golang
     directory:
       recurse: true
   project: default
