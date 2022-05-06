@@ -55,3 +55,5 @@ passord: r8sA8CPHD9!bt6d
 
 # Fortsett
 > 👉 **Gå til _drone_:** Fortsett stegene ved å gå til _drone_ branchen.
+> 
+> 👉 [DRONE](https://github.com/jonasbg/gitOps-intro/tree/drone)
