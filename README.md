@@ -20,3 +20,24 @@ tmux new-session -s port-forward -d 'kubectl port-forward svc/argocd-server -n a
 tmux split-window -t port-forward -v 'kubectl port-forward svc/gitea-http -n gitea 3000 --address 0.0.0.0'
 tmux split-window -t port-forward -v 'kubectl port-forward svc/drone -n drone 8000:80 --address 0.0.0.0'
 ```
+
+# App-of-Apps
+1. Slett klusteret og lag det på nytt
+```bash
+minikube delete 
+minikube start --memory 8192 --cpus 2
+```
+2. Installer ArgoCD
+```bash
+kubectl create namespace argocd &&
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+3. Installer App-of-apps
+```bash
+kubectl apply -f https://raw.githubusercontent.com/jonasbg/gitOps-intro/golang/applications/app-of-apps.yml
+```
+
+> 👉 Gå til ArgoCD og synkroniser app-of-apps, og så de andre prosjektene.
+> 
+> 👉 Følg stegene fra [DRONE](https://github.com/jonasbg/gitOps-intro/tree/drone) og Runner 👆 over her for å sette opp DroneCI
+> 
