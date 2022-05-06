@@ -1,4 +1,4 @@
-# gitOps-nnug-demo
+# gitOps-intro
 
 Opprett en linux VM med minkube eller annen ønsket k8s tilbyder.
 ```bash
@@ -20,3 +20,4 @@ Nå du nå åpner nettsiden ved å gå til IP for multipass og portnummer 8080 v
 
 # Fortsett
 For å fortsette går du nå til branchen som heter `gitea` for å installere ArgoCD og Gitea gjennom gitOps.
+> 👉 [GITEA](https://github.com/jonasbg/gitOps-intro/tree/gitea)
