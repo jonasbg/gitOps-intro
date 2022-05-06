@@ -36,3 +36,5 @@ Nå kan vi koble DroneCI til repoet vårt. Gå til [http://192.168.64.5:8000](ht
 
 # Fortsett
 > 👉 **Gå til branchen _golang_**: Fortsett ved å gå til neste branch _golang_.
+> 
+> 👉 [GOLANG](https://github.com/jonasbg/gitOps-intro/tree/golang)
