@@ -15,7 +15,7 @@ Kopier `Client ID` og `Client Secret` og bruk de som override i ArgoCD for Drone
 # DroneCI
 For å installere DroneCI må vi fortelle ArgoCD hvor manifestet befinner seg. Manifestet befinner seg på en egen branch som heter `drone`, så dette kan endres fra ArgoCD UI eller ved å patche `app-of-apps` manifestet.
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/jonasbg/gitOps-nnug-demo/drone/applications/app-of-apps.yml
+kubectl apply -f https://raw.githubusercontent.com/jonasbg/gitOps-intro/drone/applications/app-of-apps.yml
 ```
 
 ## Overskriv parametere
