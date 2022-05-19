@@ -34,7 +34,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 ```
 3. Installer App-of-apps
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/jonasbg/gitOps-intro/golang/applications/app-of-apps.yml
+kubectl apply -n argocd -f https://raw.githubusercontent.com/jonasbg/gitOps-intro/golang/applications/app-of-apps.yml
 ```
 
 > 👉 Gå til ArgoCD og synkroniser app-of-apps, og så de andre prosjektene.
