@@ -30,7 +30,7 @@ Siden vi jobber med gitOps skal vi nå gå mot et ekte git repo som grunnlag for
 
 Installer `app-of-apps` i klusteret
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/jonasbg/gitOps-intro/gitea/applications/app-of-apps.yml
+kubectl apply -n argocd -f https://raw.githubusercontent.com/jonasbg/gitOps-intro/gitea/applications/app-of-apps.yml
 ```
 
 # Gitea
