@@ -2,6 +2,7 @@ baseURL = "www.example.com"
 languageCode = "en-us"
 title = "Hugo Whisper Theme"
 theme = "hugo-whisper-theme"
+canonifyurls = true
 
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
@@ -25,6 +26,11 @@ summaryLength = 30
     name = "Docs"
     url = "/docs/"
     weight = 2
+
+[[menu.main]]
+    name = "Signering"
+    url = "/signering/"
+    weight = 3
 
 [params]
   google_analytics_id=""
