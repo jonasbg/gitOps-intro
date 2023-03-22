@@ -14,7 +14,7 @@ spec:
   source:
     path: cluster/project/nyan/
     repoURL: 'https://github.com/jonasbg/gitOps-intro.git'
-    targetRevision: main
+    targetRevision: static-site
     directory:
       recurse: true
   project: nyan
