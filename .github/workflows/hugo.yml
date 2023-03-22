@@ -58,6 +58,9 @@ jobs:
             --source docs/ \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+        with:
+          source: docs/
+          destination: ./public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
