@@ -33,6 +33,8 @@ spec:
   dnsNames:
     - git.local
     - nyan.local
+    - argocd.local
+    - "*.local"
   issuerRef:
     name: self-signed
     kind: ClusterIssuer
