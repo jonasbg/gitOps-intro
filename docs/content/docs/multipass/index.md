@@ -17,8 +17,30 @@ sudo snap install microk8s --classic --channel=1.26/stable
 sudo iptables -P FORWARD ACCEPT
 
 sudo usermod -a -G microk8s $USER
+mkdir ~/.kube
 sudo chown -f -R $USER ~/.kube
-microk8s status --wait-ready
+newgrp microk8s
+
+microk8s enable ingress dns cert-manager hostpath-storage
+```
+
+For å få argocd ingressen til å fungere må nginx kjøres med `--enable-ssl-passthrough`. Dette patches ved følgende kommando.
+
+```shell
+kubectl -n ingress patch daemonsets nginx-ingress-microk8s-controller \
+--type=json \
+-p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--enable-ssl-passthrough"}]'
+```
+
+Kjør følgende kommando og legg resultatet i `hosts` filen på egen maskin og multipass.
+```shell
+IP=$(hostname -I | awk '{print $1}')
+cat << EOF
+  $IP git.local
+  $IP drone.local
+  $IP nyan.local
+  $IP argocd.local
+EOF
 ```
 
 ### Kommandoer du bør vite om
