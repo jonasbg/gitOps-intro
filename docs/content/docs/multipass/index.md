@@ -8,6 +8,14 @@ For å kunne starte, må du ha tilgang til et kubernetes kluster. Et av de enkle
 
 For å installere multipass følg den offisielle installasjons guiden på [installasjons guide](https://multipass.run/install)
 
+### Alternativer til multipass og microk8s
+
+- [minikube](https://minikube.sigs.k8s.io/docs/) kanskje det enkleste verktøyet for å kjøre opp et kubernetes miljø? Med mulighet for forskjellig vm tilbyder.
+- [k3s](https://k3s.io) produksjonsklart kubernetes med kun de nødvendigste kubernetes funksjonene. Minimalt og god på ytelse.
+- [k3d](https://k3d.io/v5.4.9/) **k3**s in **d**ocker. Nedstrippet versjon av k3s som kjører i docker.
+- [kind](https://kind.sigs.k8s.io) fullverdig verktøy for å kjøre opp kubernetes i docker.
+- [k0s](https://k0sproject.io) minimalt kubernetes system som er enkelt å installere og provsjonere.
+
 ### Installer microk8s
 
 ```shell
