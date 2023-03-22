@@ -43,7 +43,7 @@ spec:
     size: 4096
   subject:
     countries:
-    - NO
+    - "NO"
     localities:
     - Trondheim
     organizationalUnits:
