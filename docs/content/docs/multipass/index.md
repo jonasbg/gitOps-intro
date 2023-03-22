@@ -11,7 +11,7 @@ For å installere multipass følg den offisielle installasjons guiden på [insta
 ### Installer microk8s
 
 ```shell
-multipass launch --name microk8s-vm --mem 4G --disk 40G
+multipass launch --name microk8s-vm --memory 4G --disk 40G
 multipass shell microk8s-vm
 sudo snap install microk8s --classic --channel=1.26/stable
 sudo iptables -P FORWARD ACCEPT
@@ -21,7 +21,7 @@ mkdir ~/.kube
 sudo chown -f -R $USER ~/.kube
 newgrp microk8s
 
-microk8s enable ingress dns cert-manager hostpath-storage
+microk8s enable ingress dns cert-manager
 ```
 
 For å få argocd ingressen til å fungere må nginx kjøres med `--enable-ssl-passthrough`. Dette patches ved følgende kommando.
@@ -56,6 +56,7 @@ cat << EOF >> ~/.bashrc
   alias kubectl="microk8s kubectl"
   alias k=kubectl
 EOF
+source ~/.bashrc
 ```
 
 
