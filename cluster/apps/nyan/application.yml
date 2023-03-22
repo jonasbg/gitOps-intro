@@ -17,7 +17,7 @@ spec:
     targetRevision: static-site
     directory:
       recurse: true
-  project: nyan
+  project: default
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
