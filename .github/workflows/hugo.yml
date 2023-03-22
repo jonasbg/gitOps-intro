@@ -57,7 +57,7 @@ jobs:
           hugo \
             --source docs/ \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "${{ steps.pages.outputs.base_url }}/gitOps"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
