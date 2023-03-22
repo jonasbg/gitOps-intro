@@ -28,7 +28,7 @@ summaryLength = 30
 
 [params]
   google_analytics_id=""
-  homepage_button_link = '/docs'
+  homepage_button_link = 'gitOps-intro/docs'
   homepage_button_text = 'Kom i gang'
   homepage_intro = 'Whisper is a documentation theme built with Hugo. The design and functionality is intentionally minimal.'
   homepage_image = '/images/terminal.gif'
