@@ -27,7 +27,7 @@ spec:
   isCA: true
   commonName: svc.cluster.local
   secretName: self-signed
-  duration: 45000h
+  duration: 45000h0m0s
   privateKey:
     rotationPolicy: Always
   subject:
