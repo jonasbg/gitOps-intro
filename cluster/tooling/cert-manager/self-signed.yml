@@ -26,7 +26,7 @@ metadata:
 spec:
   # selfSigned: {}
   ca:
-    secretName: self-signed
+    secretName: self-signed-ca
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -36,11 +36,18 @@ metadata:
 spec:
   isCA: true
   commonName: svc.cluster.local
-  secretName: self-signed
+  secretName: self-signed-ca
   duration: 45000h0m0s
   privateKey:
     rotationPolicy: Always
+    size: 4096
   subject:
+    countries:
+    - NO
+    localities:
+    - Trondheim
+    organizationalUnits:
+    - NHN
     organizations:
     - Norsk helsenett
   usages:
