@@ -12,8 +12,7 @@ steps:
   - git clone -c http.sslVerify=false https://git.local/gitea/gitOps-intro.git .
   - git checkout $DRONE_COMMIT
 
-
-- name: kaniko
+- name: publish
   image: plugins/kaniko
   settings:
     username:
