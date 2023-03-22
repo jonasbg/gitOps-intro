@@ -12,19 +12,20 @@ steps:
   - git clone -c http.sslVerify=false https://git.local/gitea/gitOps-intro.git .
   - git checkout $DRONE_COMMIT
 
-- name: publish
-  image: thegeeklab/drone-docker-buildx
-  privileged: true
+
+- name: kaniko
+  image: plugins/kaniko
   settings:
-    platforms:
-      - linux/arm64
-      - linux/amd64
-    repo: git.local/gitea/nyancat
-    tags: [ "${DRONE_COMMIT_SHA:0:7}","alpine" ]
     username:
-      from_secret: gitea_username
+      from_secret: registry_username
     password:
-      from_secret: gitea_password
+      from_secret: registry_password
+    registry: git.local
+    repo: git.local/gitea/nyancat
+    skip_tls_verify: true
+    tags: latest
+    context: src/
+    dockerfile: src/Dockerfile
   depends_on:
     - clone
 
