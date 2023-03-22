@@ -10,3 +10,5 @@ Installer `app-of-apps` i klusteret
 ```bash
 kubectl apply -n argocd -f https://raw.githubusercontent.com/jonasbg/gitOps-intro/static-site/cluster/app-of-apps.yml
 ```
+
+Når applikasjonen er ferdig installert vil du kunne nå argocd gjennom https://argocd.local

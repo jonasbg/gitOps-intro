@@ -23,12 +23,3 @@ Gjenta denne kommandoen frem til passordet vises, i mellomtiden er den tom.
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" 2> /dev/null | base64 -d && echo
 ```
-
-### Åpne ArgoCD og logg inn
-```bash
-kubectl port-forward svc/argocd-server -n argocd 8080:443 --address 0.0.0.0
-```
-
-Logg inn med `brukernavn=admin` og `passord` fra passordet ovenfor her.
-
-> 👉 *Viktig*: La denne `port-forwarding` kjøre i bakgrunnen mens du fortsetter.

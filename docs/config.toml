@@ -2,6 +2,7 @@ baseURL = "www.example.com"
 languageCode = "en-us"
 title = "Hugo Whisper Theme"
 theme = "hugo-whisper-theme"
+relativeURLs = true
 
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
