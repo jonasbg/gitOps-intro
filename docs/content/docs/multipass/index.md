@@ -29,7 +29,7 @@ mkdir ~/.kube
 sudo chown -f -R $USER ~/.kube
 newgrp microk8s
 
-microk8s enable ingress dns cert-manager
+microk8s enable ingress dns cert-manager hostpath-storage
 ```
 
 For å få argocd ingressen til å fungere må nginx kjøres med `--enable-ssl-passthrough`. Dette patches ved følgende kommando.
