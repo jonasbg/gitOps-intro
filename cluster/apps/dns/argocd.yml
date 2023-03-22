@@ -9,7 +9,7 @@ metadata:
   name: argocd-server-ingress
   namespace: argocd
 spec:
-  ingressClassName: nginx
+  ingressClassName: public
   rules:
     - host: argocd.local
       http:
@@ -24,4 +24,4 @@ spec:
   tls:
     - hosts:
         - argocd.local
-      secretName: https-cert-nginx
+      secretName: https-cert-public
