@@ -47,7 +47,7 @@ spec:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
             readOnlyRootFilesystem: true
-          image: "git.local/jonasbg/nyancat:latest"
+          image: "git.local/gitea/nyancat:latest"
           imagePullPolicy: Always
           volumeMounts:
             - mountPath: /tmp
