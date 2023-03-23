@@ -13,10 +13,10 @@ gitOps er en pull metodikk, der en operator som installert i hvert miljø vil g�
 Siden gitOps jobber et pull metodikken, vil det si at det er klusteret som har tilgang på de nødvendige hemmelighetene for å få tilgang til git eller image repo som dockerhub. Dermed kan klusteret være helt hermetisert og isolert, noe som er sikrere enn en tradisjonell push metodikk der en byggelinje f.eks pusher artifaktene til miljøene. I de tilfellene må byggelinjen har de nødvendige tilgangene for å kunne kontakte miljøene.
 
 ### Oppsett
-Vi skal bygge følgende produkter
+I dette oppsett inngår følgende portefølje av produkter:
 
 Produkt | URL | Beskrivelse
----|---|---
+---:|---|---
 ArgoCD | [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) | gitOps operatoren vår, og verdens søteste logo.
 Gitea | [Gitea](https://gitea.io/en-us/) | on-prem github alternativ
 DroneCI | [DroneCI](https://www.drone.io) | bygg agenter for bygging av artifakter og produkter
