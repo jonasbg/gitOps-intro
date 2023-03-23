@@ -8,12 +8,15 @@ spec:
     name: ''
     namespace: argocd
     server: 'https://kubernetes.default.svc'
-  source:
-    path: cluster/apps/
-    repoURL: 'https://github.com/jonasbg/gitOps-intro.git'
-    targetRevision: static-site
-    directory:
-      recurse: true
+  sources:
+    - path: cluster/apps/
+      repoURL: 'https://github.com/jonasbg/gitOps-intro.git'
+      targetRevision: static-site
+      directory:
+        recurse: true
+    - path: cluster/helm/ca-certificates
+      repoURL: 'https://github.com/jonasbg/gitOps-intro.git'
+      targetRevision: static-site
   project: default
   syncPolicy:
     syncOptions:
