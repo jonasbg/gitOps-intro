@@ -1,6 +1,6 @@
 baseURL = "www.example.com"
-languageCode = "en-us"
-title = "Hugo Whisper Theme"
+languageCode = "nb-no"
+title = "gitOps introduksjon"
 theme = "hugo-whisper-theme"
 canonifyurls = true
 
@@ -27,28 +27,23 @@ summaryLength = 30
     url = "/docs/"
     weight = 2
 
-[[menu.main]]
-    name = "Signering"
-    url = "/signering/"
-    weight = 3
-
 [params]
   google_analytics_id=""
   homepage_button_link = '/docs'
   homepage_button_text = 'Kom i gang'
-  homepage_intro = 'Whisper is a documentation theme built with Hugo. The design and functionality is intentionally minimal.'
+  homepage_intro = 'Ta i bruk gitOps for å bygge profesjonelle løsninger, eller bare for å starte med noe hjemme.'
   homepage_image = '/images/gitOps.png'
 
   ## You can enable to add anchor links to header elements
   # enable_anchor_link = true
 
   [params.homepage_meta_tags]
-    meta_description = "Hugo Whisper is a documentation theme built with Hugo."
-    meta_og_title = "Hugo Whisper Theme"
+    meta_description = "Dette er en dokumentasjon for hvordan komme i gang meed gitOps"
+    meta_og_title = "Norsk helsenett"
     meta_og_type = "website"
-    meta_og_url = "https://hugo-whisper.netlify.app"
-    meta_og_image = "https://raw.githubusercontent.com/JugglerX/hugo-whisper-theme/master/images/tn.png"
-    meta_og_description = "Hugo Whisper is a documentation theme built with Hugo."
+    meta_og_url = "https://nhn.no"
+    meta_og_image = "https://www.nhn.no/_/image/995b7052-73af-4cb4-8960-7eb7bd12198d:cd6d3e0e98917056c843006683eaa68355d5777f/width-720/3.svg"
+    meta_og_description = "Norsk helsenett presenterer hvordan komme i gang med gitOps"
     meta_twitter_card = "summary"
     meta_twitter_site = "@zerostaticio"
     meta_twitter_creator = "@zerostaticio"

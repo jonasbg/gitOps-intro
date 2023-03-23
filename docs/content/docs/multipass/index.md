@@ -40,7 +40,9 @@ kubectl -n ingress patch daemonsets nginx-ingress-microk8s-controller \
 -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--enable-ssl-passthrough"}]'
 ```
 
-Kjør følgende kommando og legg resultatet i `hosts` filen på egen maskin og multipass.
+Kjør følgende kommando og legg resultatet i `hosts` filen på egen maskin og multipass. På MacOSX og Linux er den rette plasseringen `/etc/hosts`.
+
+**Det er viktig at du gjør dette på multipass VM instansen din. Og dessverre vil denne filen resettes etter hver restart av maskinen**
 ```shell
 IP=$(hostname -I | awk '{print $1}')
 cat << EOF
