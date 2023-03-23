@@ -7,4 +7,5 @@ kind: ConfigMap
 metadata:
   name: ca-store
   namespace: {{ $v }}
+---
 {{- end }}
