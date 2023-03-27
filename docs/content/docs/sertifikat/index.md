@@ -29,22 +29,18 @@ curl -L argocd.local
 
 For at gitea og droneci skal kunne kommunisere over en sikker TLS forbindelse, må man legge inn `issuer.crt` filen i hver eneste pod. Dette skal vi gjøre ved hjelp av en configmap, og er et stykke manuelt arbeid.
 
-Først må vi inn med en configMap i hvert eneste namespace der en pod skal ha tilgang til CA sertifiktatet.
-```shell
-apiVersion: v1
-data:
-  ca.crt: |
-    -----BEGIN CERTIFICATE-----
-              [...]
-    -----END CERTIFICATE-----
-kind: ConfigMap
-metadata:
-  name: ca-store
-  namespace: drone
-```
+`ca.crt` er tilgjengelig som en hemmelighet i de `namespace` som har spurt etter et sertifikat. Hemmeligheten som lages består av 3 datafelt, `ca.crt`, `tls.crt` og `tls.key`.
 
-Så må vi mounte inn denne configMap verdien inn i hver pod.
-```shell
+- `ca.crt`
+  - Dette feltet er den offentlige nøkkelen til issuer sertifikatet som vi får fra klusteret.
+- `tls.crt`
+  - Dette er den offentlige nøkkelen for selve tjenesten.
+- `tls.key`
+  - Dette er privatnøkkelen for tjenesten, (leaf sertifikatet) f.eks det sertifikatet som gir oss https://drone.local
+
+Det vi må gjøre hvis vi ønsker en tjeneste som kommuniserer med en annen tjeneste over `HTTPS` i klusteret, er å importere `ca.crt` inn i noden. Det er forskjellig for hvert HELM chart, men forhåpentligvis er det en god oppskrift på hvordan man kan gjøre det. Sluttresultatet manifestet skal bli som følger:
+
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -55,14 +51,11 @@ spec:
     - image:
       volumeMounts:
         - mountPath: /etc/ssl/certs/ca.crt
-          name: ca-store
+          name: cluster-ca
           readOnly: true
-          subPath: ca.crt #denne er VIKTIG. Hvis ikke overskrives hele mappen.
+          subPath: ca.crt #denne er VIKTIG. Hvis ikke overskrives hele mappen. Dette er også verdien fra hemmeligheten vi ønsker å hente ut.
   volumes:
-    - configMap:
-        defaultMode: 420
-        name: ca-store
-      name: ca-store
+    - secret:
+        secretName: drone-tls-secret
+      name: cluster-ca
 ```
-### Info
-> Heldigvis tar HELM og gjør dette arbeidet lett for oss. Bare gå til `cluster/apps/configmaps/values.yml` og endre CA.crt verdien til innholder i `issuer.crt` filen.
