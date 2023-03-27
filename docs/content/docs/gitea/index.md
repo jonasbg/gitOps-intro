@@ -42,8 +42,14 @@ Kopier `Client ID` og `Client Secret` og bruk de som override i ArgoCD for Drone
 # DroneCI
 
 ## Overskriv parametere
-Gå inn i **ArgoCD** og overskriv parameterne til DroneCI for å bruke `Client ID` og `Client Secret` fra Gitea. Dette gjøres under **parametere** i prosjektet under **App Details**, og i **values** teksboksen.
+
+Gå til [Drone.local](https://drone.local) for å logge inn. Du vil nå bli sendt til Gitea for autentisering før du kommer tilbake til DroneCI for registrering. `gitea` brukeren er allerede registert som admin i DroneCI fra JWT token til Gitea, så her kan du skrive hva som helst i feltene
+![Velkommen](drone-welcome.png)
+
+![DroneCI Registrering](drone-register.png)
 
 Når du nå synkroniserer prosjektet vil ArgoCD installere DroneCI server og runner.
+
+![Synkroniser](drone-sync.png)
 
 ![Drone Dashboard](drone-dashboard.png)
