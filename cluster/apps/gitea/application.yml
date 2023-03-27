@@ -31,13 +31,13 @@ spec:
             password: "gitops"
         extraContainerVolumeMounts:
           - mountPath: /etc/ssl/certs/ca.crt
-            name: ca-store
+            name: domain-ca
             readOnly: true
             subPath: ca.crt
         extraVolumes:
-          - configMap:
-              name: ca-store
-            name: ca-store
+          - secret:
+              secretName: gitea-tls-secret
+            name: domain-ca
         memcached:
           enabled: false
         postgresql:
@@ -50,7 +50,7 @@ spec:
           tls:
           - hosts:
               - "git.local"
-            secretName: git-tls-secret
+            secretName: gitea-tls-secret
           hosts:
           - host: git.local
             paths:

@@ -4,8 +4,6 @@
 
 namespaces:
 - argocd
-- gitea
-- drone
 
 Certificate: |-
   -----BEGIN CERTIFICATE-----

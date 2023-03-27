@@ -15,8 +15,6 @@ metadata:
   namespace: cert-manager
 spec:
   selfSigned: {}
-  # ca:
-  #   secretName: selfsigned-secret
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -24,7 +22,6 @@ metadata:
   name: self-signed
   namespace: cert-manager
 spec:
-  # selfSigned: {}
   ca:
     secretName: self-signed-ca
 ---

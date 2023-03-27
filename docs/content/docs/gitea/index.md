@@ -34,10 +34,16 @@ Callback URI: https://drone.local/login
 ```
 
 Kopier `Client ID` og `Client Secret` og bruk de som override i ArgoCD for DroneCI etter installasjon i steget under.
+![Enable OAUTH](gitea-drone-oauth2.png)
 
+![Input DroneCI - gitea client-id and Client-Secret](argocd-drone-secret.png)
+
+![Authorize DroneCI](gitea-authorize.png)
 # DroneCI
 
 ## Overskriv parametere
 Gå inn i **ArgoCD** og overskriv parameterne til DroneCI for å bruke `Client ID` og `Client Secret` fra Gitea. Dette gjøres under **parametere** i prosjektet under **App Details**, og i **values** teksboksen.
 
 Når du nå synkroniserer prosjektet vil ArgoCD installere DroneCI server og runner.
+
+![Drone Dashboard](drone-dashboard.png)

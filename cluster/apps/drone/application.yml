@@ -23,13 +23,12 @@ spec:
           DRONE_SERVER_PROTO: https
           DRONE_USER_CREATE: "username:gitea,admin:true"
         extraVolumes:
-        - configMap:
-            defaultMode: 420
-            name: ca-store
-          name: ca-store
+        - secret:
+            secretName: drone-tls-secret
+          name: domain-ca
         extraVolumeMounts:
         - mountPath: /etc/ssl/certs/ca.crt
-          name: ca-store
+          name: domain-ca
           readOnly: true
           subPath: ca.crt
         ingress:
@@ -82,13 +81,12 @@ spec:
           buildNamespaces:
             - drone
         extraVolumes:
-        - configMap:
-            defaultMode: 420
-            name: ca-store
-          name: ca-store
+        - secret:
+            secretName: drone-tls-secret
+          name: domain-ca
         extraVolumeMounts:
         - mountPath: /etc/ssl/certs/ca.crt
-          name: ca-store
+          name: domain-ca
           readOnly: true
           subPath: ca.crt
     chart: drone-runner-kube
