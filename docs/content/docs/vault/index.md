@@ -1,7 +1,7 @@
 ---
 title: 'HashiCorp Vault'
 date: 2019-02-11T19:27:37+10:00
-weight: 7
+weight: 8
 ---
 
 ![Vault](https://www.datocms-assets.com/2885/1542059843-vaultshare-imglogo-w-stack-graphic1200x630.png)
@@ -41,3 +41,11 @@ Vault er nå låst opp og tilgjengelig på https://vault.local, bruk verdien `ro
 For å lage nytt root_token fra unsea_tokens, [les her](https://developer.hashicorp.com/vault/tutorials/operations/generate-root#generate-root)
 
 ![Vault](vault.png)
+
+## Transit Engine og signering
+
+For å signere ved bruk av Vault må vi skru på Transit engine, dette gjøres ved å kjøre følgende kommando:
+
+```shell
+kubectl exec -n vault -it vault-0 -- sh -c "VAULT_TOKEN=$VAULT_TOKEN vault secrets enable transit"
+```

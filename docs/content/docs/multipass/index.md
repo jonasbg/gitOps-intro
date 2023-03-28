@@ -50,6 +50,7 @@ cat << EOF
   $IP drone.local
   $IP nyan.local
   $IP argocd.local
+  $IP vault.local
 EOF
 ```
 
